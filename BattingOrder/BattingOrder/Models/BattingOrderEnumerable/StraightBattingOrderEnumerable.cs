@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace BattingOrder.Models.BattingOrderEnumerable
 {
@@ -9,9 +9,16 @@ namespace BattingOrder.Models.BattingOrderEnumerable
     {
         public List<Player> _players;
 
-        public StraightBattingOrderEnumerable(List<Player> players)
+        public StraightBattingOrderEnumerable(List<Player> players, bool randomize)
         {
-            _players = players;
+            if (randomize)
+            {
+                _players = players.OrderBy(a => Guid.NewGuid()).ToList();
+            }
+            else
+            {
+                _players = players;
+            }
         }
 
         public override IEnumerator<Player> GetEnumerator()

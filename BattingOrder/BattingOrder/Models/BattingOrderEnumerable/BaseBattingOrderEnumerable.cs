@@ -9,14 +9,14 @@ namespace BattingOrder.Models.BattingOrderEnumerable
     {
         protected BaseBattingOrderEnumerable() { }
 
-        public static BaseBattingOrderEnumerable GetBattingOrder(BattingOrderType type, List<Player> players)
+        public static BaseBattingOrderEnumerable GetBattingOrder(BattingOrderType type, List<Player> players, bool randomize = true)
         {
             switch (type)
             {
                 case BattingOrderType.AlternatingGender:
-                    return new AlternatingGenderBattingOrderEnumerable(players);
+                    return new AlternatingGenderBattingOrderEnumerable(players, randomize);
                 case BattingOrderType.StraightOrder:
-                    return new StraightBattingOrderEnumerable(players);
+                    return new StraightBattingOrderEnumerable(players, randomize);
                 default:
                     throw new Exception($"{type} is not supported");
             }

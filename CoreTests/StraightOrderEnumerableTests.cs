@@ -26,7 +26,7 @@ namespace CoreTests
         [TestMethod]
         public void TestListMatches()
         {
-            var straightOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.StraightOrder, _players);
+            var straightOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.StraightOrder, _players, false);
             var index = 0;
             var stoppingPoint = _players.Count;
 
@@ -43,7 +43,7 @@ namespace CoreTests
         [TestMethod]
         public void TestListMatches_WithLoop()
         {
-            var straightOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.StraightOrder, _players);
+            var straightOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.StraightOrder, _players, false);
             var index = 0;
             var loopIndex = 0;
             var maxLoopIndex = 2;

@@ -26,12 +26,12 @@ namespace CoreTests
         [TestMethod]
         public void TestListMatches()
         {
-            var straightOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.AlternatingGender, _players);
+            var alternatingOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.AlternatingGender, _players);
             var index = 0;
             var stoppingPoint = _players.Count;
             Gender? currentGender = null;
 
-            foreach (var enumerablePlayer in straightOrderEnumerable)
+            foreach (var enumerablePlayer in alternatingOrderEnumerable)
             {
                 if (index == stoppingPoint) break;
 
@@ -53,13 +53,13 @@ namespace CoreTests
         [TestMethod]
         public void TestListMatches_WithLoop()
         {
-            var straightOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.AlternatingGender, _players);
+            var alternatingOrderEnumerable = BaseBattingOrderEnumerable.GetBattingOrder(BattingOrderType.AlternatingGender, _players);
             var index = 0;
             var loopIndex = 0;
             var maxLoopIndex = 2;
             Gender? currentGender = null;
 
-            foreach (var enumerablePlayer in straightOrderEnumerable)
+            foreach (var enumerablePlayer in alternatingOrderEnumerable)
             {
                 if (index == _players.Count)
                 {

@@ -10,12 +10,13 @@ namespace BattingOrder
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"{nameof(MainPage)}");
+            NavigationService.NavigateAsync($"{nameof(NavPage)}/{nameof(MainPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
+            containerRegistry.RegisterForNavigation<NavPage>(nameof(NavPage));
             containerRegistry.RegisterForNavigation<MainPage>(nameof(MainPage));
         }
     }

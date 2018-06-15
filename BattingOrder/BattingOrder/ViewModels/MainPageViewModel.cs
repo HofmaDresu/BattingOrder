@@ -4,7 +4,11 @@ using System.Text;
 
 namespace BattingOrder.ViewModels
 {
-    class MainPageViewModel
+    public class MainPageViewModel : BaseViewModel
     {
+        public MainPageViewModel()
+        {
+            Title = "Main Page";
+        }
     }
 }

@@ -147,13 +147,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Prism.Core">
-      <Version>7.0.0.396</Version>
-    </PackageReference>
     <PackageReference Include="Prism.DryIoc.Forms">
-      <Version>7.0.0.396</Version>
-    </PackageReference>
-    <PackageReference Include="Prism.Forms">
       <Version>7.0.0.396</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">

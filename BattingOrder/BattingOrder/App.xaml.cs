@@ -1,3 +1,4 @@
+using BattingOrder.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Xamarin.Forms.Xaml;
@@ -7,10 +8,10 @@ namespace BattingOrder
 {
     public partial class App : PrismApplication
 	{
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"{nameof(NavPage)}/{nameof(MainPage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavPage)}/{nameof(MainPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
